@@ -552,7 +552,7 @@ figure.effect:hover figcaption::before {
     cursor: pointer;
 	float:right;
 	/margin-left:14px;
-    height: 46px;
+    height: 48px;
     touch-action: manipulation;
     vertical-align: middle;
     white-space: nowrap;
