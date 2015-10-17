@@ -60,7 +60,7 @@
 			</form>
 			<a id="login" href="#modal-one">
 				Login
-			</a>
+			</a><br>
 			<a id="signup" href="#modal-one">
 				SignUp
 			</a>
