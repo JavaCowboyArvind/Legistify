@@ -38,7 +38,7 @@ document.getElementById(field).innerHTML = "Validating..";
 } else if (xmlhttp.readyState == 4 && xmlhttp.status == 200) { //complete and success
 document.getElementById(field).innerHTML = xmlhttp.responseText;
 } else { //not success when completed
-document.getElementById(field).innerHTML = "Error Occurred. <a href='index.php'>Reload Or Try Again</a> the page.";
+document.getElementById(field).innerHTML = "Error Occurred. <a href='index.php' style='color:black'>Reload Or Try Again</a> the page.";
 }
 }
 xmlhttp.open("GET", "validation.php?field=" + field + "&query=" + query, false);
