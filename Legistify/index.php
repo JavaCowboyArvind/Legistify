@@ -19,7 +19,7 @@
     function onLinkedInLoad() {
         IN.Event.on(IN, "auth", getProfileData);
 		   $('a[id*=li_ui_li_gen_]').css({marginTop:'20px'}) 
-       .html('<img src="linkedin-3.png" height="38" width="133" border="0" />');    
+       .html('<img src="linkedin-3.png" height="38" width="125" border="0" />');    
  
     }
 
