@@ -1088,4 +1088,19 @@ background:rgba(60,76,85,1);
     margin: 5px 0px 0px;
     outline: rgb(255, 255, 255) none 0px;
 }
- 
+.login_buttons{
+	margin-left:90px;
+	width:270px;
+	 
+}
+.log_fb{
+	float:left;
+	
+} 
+.log_in{ float:right;
+opacity:0.9;
+}
+.log_in:hover{
+	opacity:1;
+	
+}

@@ -8,7 +8,38 @@
 <link rel="stylesheet" type="text/css" href="style.css">
    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
    <script src="ajax_alert.js" type="text/javascript"></script>
-   <script src="validation.js" type="text/javascript"></script>
+   <script src="validation.js" type="text/javascript"></script><script type="text/javascript" src="//platform.linkedin.com/in.js">
+    api_key: 75pdgdyj3msln6 
+	onLoad: onLinkedInLoad
+</script>
+
+<script type="text/javascript">
+    
+    // Setup an event listener to make an API call once auth is complete
+    function onLinkedInLoad() {
+        IN.Event.on(IN, "auth", getProfileData);
+		   $('a[id*=li_ui_li_gen_]').css({marginTop:'20px'}) 
+       .html('<img src="linkedin-3.png" height="38" width="133" border="0" />');    
+ 
+    }
+
+    // Handle the successful return from the API call
+    function onSuccess(data) {
+        console.log(data);
+    }
+
+    // Handle an error response from the API call
+    function onError(error) {
+        console.log(error);
+    }
+
+    // Use the API call wrapper to request the member's basic profile data
+    function getProfileData() {
+        IN.API.Raw("/people/~").result(onSuccess).error(onError);
+    }
+
+</script>
+
 </head>
 <body>		
  
@@ -142,7 +173,76 @@ $("#signup").click(function()
 	   <div id="tab-content3" class="tab-content">
 					<div id="social_signup_form"> 
                      
-                       <div id="fb_outer">
+				<div class="login_buttons"> 
+				
+				
+<script> 
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response); 
+    if (response.status === 'connected') {
+      testAPI();
+    } else if (response.status === 'not_authorized') { 
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'in with Facebook.';
+    } else { 
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into Facebook.';
+    }
+  }
+ 
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '798118823632131',
+    cookie     : true,  
+                       
+    xfbml      : true, 
+    version    : 'v2.2'
+  });
+ 
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+
+  };
+
+ (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+ 
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+  }
+</script>
+ 
+ <div class="log_fb">
+<div class="fb-login-button" data-max-rows="4" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+</div>
+<div id="status">
+<!--Linked in Api starts here -->
+<div class="log_in">
+<script type="in/Login"></script>
+</div>
+		</div>	 
+					  
+   
+<!--
+   <div id="fb_outer">
 	<div id="fb_outer_link">
 		<a id="fb_outer_link_a" > 
 		<ul id="fb_outer_ul">
@@ -169,6 +269,8 @@ $("#signup").click(function()
 	
 	</div>
 </div>  
+
+-->
 			</div>
          </div>
     </li>
