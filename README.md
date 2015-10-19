@@ -7,4 +7,8 @@ Due to time limit, could not optimise it for the Mobiles and other browsers.
 
 Available online at : http://legistify.roadrunner6.com
 
-
+I have implemented two methods to check login:
+  (i) For Facebook, The login button changes to logout button
+  (ii)For linkedin, The login button disappears after login
+  So, both are working fine.
+  
